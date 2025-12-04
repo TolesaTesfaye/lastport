@@ -76,7 +76,7 @@ To customize the portfolio with your own information:
 This portfolio is deployed on GitHub Pages using GitHub Actions.
 
 ### Live Site
-🌐 **Live Portfolio**: https://tolesatesfaye.github.io/port2/
+🌐 **Live Portfolio**: https://tolesatesfaye.github.io/lastport/
 
 ### Deployment Process
 1. Push changes to the `main` branch
