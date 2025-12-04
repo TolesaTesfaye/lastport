@@ -71,6 +71,25 @@ To customize the portfolio with your own information:
 4. Modify contact information in `Contact.jsx`
 5. Add your social media links in `Hero.jsx` and `Contact.jsx`
 
+## Deployment
+
+This portfolio is deployed on GitHub Pages using GitHub Actions.
+
+### Live Site
+🌐 **Live Portfolio**: https://tolesatesfaye.github.io/port2/
+
+### Deployment Process
+1. Push changes to the `main` branch
+2. GitHub Actions automatically builds and deploys the site
+3. The site is updated within a few minutes
+
+### Manual Deployment
+If you need to deploy manually:
+```bash
+npm run build
+# Then push the dist folder to gh-pages branch or use GitHub Actions
+```
+
 ## License
 
 This project is open source and available under the MIT License.
