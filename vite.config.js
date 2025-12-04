@@ -4,5 +4,6 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/lastport/", // MUST match your GitHub repo name
+  // Remove base path for Vercel deployment (or use '/' for root)
+  base: "/",
 });
