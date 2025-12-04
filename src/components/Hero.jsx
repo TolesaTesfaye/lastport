@@ -227,13 +227,13 @@ const Hero = ({ darkMode }) => {
                 <div className="w-full h-full rounded-full overflow-hidden bg-gray-800">
                   {/* Your profile image */}
                   <img 
-                    src="/tolman.jpg" 
+                    src="/port2/tolman.jpg" 
                     alt="Tolesa Tesfaye"
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       // Try alternative image
                       if (e.target.src.includes('tolman.jpg')) {
-                        e.target.src = '/Tolli.jpg'
+                        e.target.src = '/port2/Tolli.jpg'
                       } else {
                         // Fallback to gradient if image not found
                         e.target.style.display = 'none'

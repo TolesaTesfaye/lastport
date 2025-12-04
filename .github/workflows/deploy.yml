@@ -22,17 +22,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm cache clean --force
       
       - name: Build
         run: npm run build
+        env:
+          NODE_ENV: production
+      
+      - name: List build output
+        run: ls -la dist/
+        continue-on-error: true
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
