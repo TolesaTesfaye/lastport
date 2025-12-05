@@ -22,8 +22,8 @@ function App() {
   return (
     <div className={`min-h-screen transition-colors duration-300 ${
       darkMode 
-        ? 'bg-gray-900' 
-        : 'bg-gradient-to-br from-gray-50 via-white to-blue-50/30'
+        ? 'bg-gray-900 text-gray-100' 
+        : 'bg-white text-gray-800'
     }`}>
       {/* Amazing New Animated Background - Mesh Gradient Style */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -45,7 +45,7 @@ function App() {
             className={`absolute top-0 left-0 w-[600px] h-[600px] rounded-full blur-3xl ${
               darkMode 
                 ? 'bg-gradient-to-r from-blue-600/40 via-purple-600/40 to-pink-600/40' 
-                : 'bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-pink-400/20'
+                : 'bg-gradient-to-r from-blue-100/50 via-purple-100/50 to-pink-100/50'
             }`}
           />
           <motion.div
@@ -117,8 +117,8 @@ function App() {
               darkMode ? 'opacity-10' : 'opacity-5'
             }`}
             style={{
-              backgroundImage: `linear-gradient(${darkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.2)'} 1px, transparent 1px),
-                                linear-gradient(90deg, ${darkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.2)'} 1px, transparent 1px)`,
+              backgroundImage: `linear-gradient(${darkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.1)'} 1px, transparent 1px),
+                                linear-gradient(90deg, ${darkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.1)'} 1px, transparent 1px)`,
               backgroundSize: '50px 50px',
             }}
           />

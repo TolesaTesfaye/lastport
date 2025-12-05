@@ -42,7 +42,7 @@ const Hero = ({ darkMode }) => {
 
   return (
     <section id="home" className={`min-h-screen flex items-center justify-center relative overflow-hidden pt-16 ${
-      darkMode ? '' : 'bg-gradient-to-br from-white via-blue-50/20 to-purple-50/20'
+      darkMode ? 'bg-transparent' : 'bg-white'
     }`}>
       {/* Additional Hero Section Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -92,10 +92,10 @@ const Hero = ({ darkMode }) => {
           <div className="text-center lg:text-left flex-1">
             <motion.div variants={itemVariants} className="mb-8">
               <motion.h1
-                className="text-5xl md:text-7xl font-bold mb-6"
+                className={`text-5xl md:text-7xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}
               >
                 <motion.span 
-                  className="text-gradient inline-block"
+                  className={`inline-block ${darkMode ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500' : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600'}`}
                   animate={{ 
                     backgroundPosition: ['0%', '100%', '0%']
                   }}
@@ -115,14 +115,14 @@ const Hero = ({ darkMode }) => {
 
             <motion.p
               variants={itemVariants}
-              className={`text-lg md:text-xl mb-8 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}
+              className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-500'} mb-8`}
             >
               Haramaya University
             </motion.p>
 
-            <motion.p
+            <motion.p 
               variants={itemVariants}
-              className={`text-lg max-w-2xl mx-auto lg:mx-0 mb-12 leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}
+              className={`text-xl md:text-2xl mb-8 max-w-2xl mx-auto lg:mx-0 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}
             >
               Passionate Full-Stack Developer specializing in React, Node.js, and modern web technologies.
               Building innovative solutions with AI integration and mobile applications.

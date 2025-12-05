@@ -45,74 +45,77 @@ const About = ({ darkMode }) => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            About <span className="text-gradient">Me</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+          <motion.h2 
+            variants={itemVariants}
+            className={`text-3xl md:text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}
+          >
+            About Me
+          </motion.h2>
+          <motion.div 
+            variants={itemVariants}
+            className={`w-20 h-1 mx-auto mb-8 ${darkMode ? 'bg-gradient-to-r from-blue-400 to-purple-500' : 'bg-gradient-to-r from-blue-600 to-purple-600'}`}
+          ></motion.div>
+          <motion.p 
+            variants={itemVariants}
+            className={`text-lg max-w-3xl mx-auto ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}
+          >
+            I'm a passionate 4th-year Software Engineering student at Haramaya University, specializing in full-stack web development and AI integration. With a strong foundation in computer science and hands-on experience in modern web technologies, I build innovative solutions that solve real-world problems. through technology.
+          </motion.p>
+          <motion.p 
+            variants={itemVariants}
+            className={`text-lg max-w-3xl mx-auto ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}
+          >
+            With hands-on experience in full-stack development, I specialize in building 
+            modern web applications using React, Node.js, and various databases. I'm 
+            particularly interested in AI integration, mobile app development, and creating 
+            scalable backend systems.
+          </motion.p>
+          <motion.p 
+            variants={itemVariants}
+            className={`text-lg max-w-3xl mx-auto ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}
+          >
+            Beyond coding, I enjoy learning new technologies, contributing to open-source 
+            projects, and continuously improving my skills to stay at the forefront of 
+            software engineering.
+          </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            <h3 className={`text-3xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-              Hello, I'm Tolesa Tesfaye
-            </h3>
-            <p className={`text-lg leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              I'm a passionate 4th-year Software Engineering student at Haramaya University, 
-              dedicated to creating innovative and efficient software solutions. My journey 
-              in software development has been fueled by curiosity and a drive to solve 
-              real-world problems through technology.
-            </p>
-            <p className={`text-lg leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              With hands-on experience in full-stack development, I specialize in building 
-              modern web applications using React, Node.js, and various databases. I'm 
-              particularly interested in AI integration, mobile app development, and creating 
-              scalable backend systems.
-            </p>
-            <p className={`text-lg leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              Beyond coding, I enjoy learning new technologies, contributing to open-source 
-              projects, and continuously improving my skills to stay at the forefront of 
-              software engineering.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            <div className={`relative rounded-2xl p-8 backdrop-blur-sm border ${
-              darkMode 
-                ? 'bg-gradient-to-br from-blue-500/20 to-purple-600/20 border-gray-700' 
-                : 'bg-gradient-to-br from-blue-100/40 to-purple-100/40 border-gray-200/80 shadow-xl'
-            }`}>
-              <div className="grid grid-cols-3 gap-6">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="text-center"
-                  >
-                    <stat.icon className="text-4xl text-blue-400 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-gradient">{stat.number}</div>
-                    <div className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                      {stat.label}
-                    </div>
-                  </motion.div>
-                ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className={`p-8 rounded-xl text-center transition-all duration-300 ${
+                darkMode 
+                  ? 'bg-gray-800 hover:bg-gray-750 border border-gray-700' 
+                  : 'bg-white hover:bg-gray-50 shadow-md border border-gray-100'
+              }`}
+              whileHover={{ 
+                y: -5,
+                boxShadow: darkMode 
+                  ? '0 10px 25px -5px rgba(0, 0, 0, 0.3)'
+                  : '0 10px 25px -5px rgba(0, 0, 0, 0.05)'
+              }}
+            >
+              <div className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 ${
+                darkMode 
+                  ? 'bg-gradient-to-br from-blue-500/20 to-purple-500/20' 
+                  : 'bg-gradient-to-br from-blue-50 to-purple-50'
+              }`}>
+                <stat.icon className={`text-2xl ${
+                  darkMode ? 'text-blue-400' : 'text-blue-600'
+                }`} />
               </div>
-            </div>
-          </motion.div>
+              <h3 className={`text-2xl font-bold mb-1 ${
+                darkMode ? 'text-white' : 'text-gray-900'
+              }`}>
+                {stat.number}
+              </h3>
+              <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
         </div>
 
         <motion.div
@@ -122,22 +125,22 @@ const About = ({ darkMode }) => {
           viewport={{ once: true }}
           className="grid md:grid-cols-3 gap-8"
         >
-            {[
-            {
-              title: 'Education',
-              description: 'Pursuing Bachelor\'s in Software Engineering at Haramaya University',
-              icon: FaGraduationCap,
-            },
-            {
-              title: 'Development',
-              description: 'Full-stack development with modern frameworks and technologies',
-              icon: FaCode,
-            },
-            {
-              title: 'Innovation',
-              description: 'Building cutting-edge solutions with AI and mobile technologies',
-              icon: FaRocket,
-            },
+          {[
+          {
+            title: 'Education',
+            description: 'Pursuing Bachelor\'s in Software Engineering at Haramaya University',
+            icon: FaGraduationCap,
+          },
+          {
+            title: 'Development',
+            description: 'Full-stack development with modern frameworks and technologies',
+            icon: FaCode,
+          },
+          {
+            title: 'Innovation',
+            description: 'Building cutting-edge solutions with AI and mobile technologies',
+            icon: FaRocket,
+          },
           ].map((item, index) => (
             <motion.div
               key={index}
